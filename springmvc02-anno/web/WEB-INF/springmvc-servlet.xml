@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd"> 
+        
+        
+        <!-- handleMapping -->
+       <!--  <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
+        
+        <!-- handlerAdapter -->
+        <!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/> -->
+        
+        <!-- 
+        	框架中有properties配置文件,提供了映射器和适配器的指定. 有了默认配置, 在用户不指定的情况,就会用默认的配置
+        	,所以这里可以省略了(这里使用的几个类跟默认配置是一样的)
+         -->
+        <!-- <bean name="/hello.do" class="cn.spring.mvc.a_firstmvcprama.HelloController"/> -->
+        
+        <!-- 开启注解扫描 -->
+        <context:component-scan base-package="com.dev.controller"/>
+        
+        <!-- 由于mvc注解使用了过时的映射器和适配器,这里指定推荐的类器 -->
+       <!--  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+        <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> -->
+        
+        <!-- 上述推荐的类器, 用框架的一个配置标签即可完成. 框架按照这些推荐的映射器和适配器进行了指定和配置. -->
+        <mvc:annotation-driven />
+        
+        <!-- viewResolver -->
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        	<property name="prefix" value="/WEB-INF/views/"/>
+        	<property name="suffix" value=".jsp"/>
+        </bean>
+
+</beans>

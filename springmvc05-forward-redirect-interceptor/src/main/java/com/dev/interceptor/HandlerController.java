@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 拦截器此示例中使用xml配置拦截器， 实际上还有注解配置的方式 //TODO
+ */
 @Controller
 public class HandlerController {
 

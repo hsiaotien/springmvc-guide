@@ -19,7 +19,7 @@
         	框架中有properties配置文件,提供了映射器和适配器的指定. 有了默认配置, 在用户不指定的情况,就会用默认的配置
         	,所以这里可以省略了(这里使用的几个类跟默认配置是一样的)
          -->
-        <!-- <bean name="/hello.do" class="cn.spring.mvc.a_firstmvcprama.HelloController"/> -->
+        <!-- <bean name="/hello.do" class="com.dev.mvc.a_firstmvcprama.HelloController"/> -->
         
         <!-- 开启注解扫描 -->
         <context:component-scan base-package="com.dev.controller"/>
